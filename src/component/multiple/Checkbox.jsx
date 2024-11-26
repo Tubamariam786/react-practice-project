@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -24,7 +24,11 @@ export default function Checkboxcd() {
   };
 
   return (
-    <Box sx={{ width: "70%" }}>
+    <Box
+      sx={{
+        width: { xs: "100%", lg: "70%" },
+       }}
+    >
       <Stepper activeStep={activeStep}>
         {steps.map((label) => (
           <Step key={label}>
@@ -39,10 +43,19 @@ export default function Checkboxcd() {
       ) : (
         <Typography sx={{ mt: 2, mb: 1 }}>
           {activeStep === 0 && (
-            <Form handleNext={handleNext} formData={formData} setFormData={setFormData} />
+            <Form
+              handleNext={handleNext}
+              formData={formData}
+              setFormData={setFormData}
+            />
           )}
           {activeStep === 1 && (
-            <Debitcard handleNext={handleNext} handleBack={handleBack} formData={formData} setformData={setFormData} />
+            <Debitcard
+              handleNext={handleNext}
+              handleBack={handleBack}
+              formData={formData}
+              setformData={setFormData}
+            />
           )}
           {activeStep === 2 && (
             <ReviewO handleNext={handleNext} handleBack={handleBack} />
